@@ -16,7 +16,7 @@ last_kanji = u"\u9faf"
 #Kanji are between \u4e00-\u9faf
 
 def get_card(collection, card_id ):
-    card = collection.getCard(card_id)
+    card = collection.get_card(card_id)
     note = card.note()
     return note
 
@@ -34,8 +34,8 @@ def i_know_all_kanji_in_word(word:str, known_kanji:str) -> bool :
 
 def unsuspend_learned_words():
     ids_of_learned_kanji = mw.col.find_cards(config["kanj_i_learned_query"])
-    known_kanji = "".join([mw.col.getCard(card_id).note()["Kanji"] for card_id in ids_of_learned_kanji])
-
+    known_kanji = "".join(set([mw.col.get_card(card_id).note()["Kanji"] for card_id in ids_of_learned_kanji]))
+    
     # Get all the suspended vocab cards 
     target_deck_name = config["target_deck"]
     target_deck = mw.col.decks.by_name(target_deck_name)["id"]

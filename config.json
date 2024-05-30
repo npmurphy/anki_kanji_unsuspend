@@ -1,8 +1,8 @@
 {
-      "source_deck_query": "deck:z10_10k",
-      "target_deck": "z10_10k",
+      "source_deck_query": "\"deck:言葉の元\"",
+      "target_deck": "4年生",
       "ShowMenu": true,
-      "kanj_i_learned_query": "\"deck:z0_Kanji-Heisig\" -is:new",
-      "kanji_field": "Kanji",
-      "kana_field": "Kana"
+      "kanj_i_learned_query": "\"deck:All in One Kanji\" -is:suspended",
+      "kanji_field": "vocab",
+      "kana_field": "vocab-kana"
 }
